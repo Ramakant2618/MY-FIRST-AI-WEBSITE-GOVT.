@@ -1,0 +1,1 @@
+const express=require('express'),path=require('path');const app=express();app.use(express.json());app.use(express.static(path.join(__dirname,'public')));app.get('/api/health',(q,s)=>s.json({ok:true}));app.get('*',(q,s)=>s.sendFile(path.join(__dirname,'public/index.html')));app.listen(process.env.PORT||3000,()=>console.log('JanSahayak AI running at http://localhost:3000'));
